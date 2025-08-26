@@ -1,0 +1,289 @@
+<!DOCTYPE ahtml>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球青年文明对话联盟</title>
+    <!-- 引入 Bootstrap CSS，版本 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 为整个页面设置主题颜色 */
+        body {
+            background-color: #55ABED; /* 新的主题颜色 */
+            color: #ffffff; /* 确保文字颜色为白色，以便在深色背景下清晰可见 */
+            font-family: 'Inter', sans-serif; /* 使用 Inter 字体 */
+        }
+        
+        /* 设置导航栏的样式，使其背景半透明，并带有一些圆角 */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+            -webkit-backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #cccccc !important;
+            border-bottom: 2px solid #ffffff; /* 鼠标悬停时添加白色下划线 */
+            padding-bottom: 3px;
+        }
+        
+        /* 英雄部分，背景图片样式 */
+        .hero-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            background-image: url('flags-globe-hq.jpg'); /* 使用新的背景图片 */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* 将背景色与图片叠加 */
+            border-radius: 1rem;
+            padding: 4rem 2rem;
+            margin-top: 80px;
+            text-align: left; /* 文字左对齐 */
+        }
+        
+        /* 确保文字在背景图片上清晰可见 */
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景，让文字更突出 */
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        /* 统一卡片样式 */
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 1rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* 悬停时上移效果 */
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* 语言切换按钮样式 */
+        .lang-switcher a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: bold;
+        }
+
+        .lang-switcher a:hover {
+            text-decoration: underline;
+        }
+
+        /* 标志图片样式，将其高度调整为60px */
+        .navbar-brand img {
+            height: 60px; /* 新的高度 */
+            margin-right: 15px; /* 调整右侧间距 */
+        }
+
+        /* 导航栏顶部的透明样式 */
+        .navbar.scrolled-down {
+            background-color: rgba(0, 0, 0, 0); /* 保持透明 */
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- 协会标志 -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- 使用新的标志图片 -->
+                <img src="logo globee .webp" alt="全球青年文明对话联盟标志">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" id="nav-home">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us-section" id="nav-about">关于我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav-contact">联系我们</a>
+                    </li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" id="lang-zh">中文</a>
+                    <a href="#" id="lang-en">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 英雄部分，背景图片和文字 -->
+        <div class="row">
+            <div class="col-lg-12 hero-section">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold" id="hero-title">欢迎来到全球青年文明对话联盟</h1>
+                    <p class="fs-5 mt-3" id="hero-text">团结青年力量，共创美好未来。在这里，您可以了解我们的最新动态和项目。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 关于我们内容区块 -->
+        <div class="row my-5" id="about-us-section">
+            <div class="col-lg-12">
+                <div class="card p-5">
+                    <h2 class="section-title text-center" id="about-title">关于我们</h2>
+                    <p id="about-p1">
+                        全球青年文明对话联盟是在全球化和信息化日益加深的时代背景下应运而生的。随着不同文化和文明之间的交流日益增加，误解和冲突的现象也层出不穷，尤其是青年群体之间的文化隔阂和认知偏差。为此，GYDCA致力于为全球青年提供一个跨文化对话的平台，旨在通过深入的文化交流促进青年间的相互理解与尊重。
+                    </p>
+                    <p id="about-p2">
+                        GYDCA的成立与中国提出的“全球文明对话倡议”密切相关。2013年，中国国家主席习近平提出“文明对话”倡议，倡导通过对话增进不同文明之间的理解与互信，推动世界各国文化的多样性和共同发展。尤其是2023年，习近平主席进一步提出的“全球文明对话倡议”，为全球青年提供了更为广阔的参与空间，激励了GYDCA的成立和发展。
+                    </p>
+                    <p id="about-p3">
+                        此外，GYDCA还得到了联合国教科文组织的支持。联合国教科文组织始终致力于推动全球文化多样性与和平，特别是在新时代，科技进步和全球化趋势下，跨文化对话显得尤为重要。GYDCA通过与联合国教科文组织等国际机构的合作，促进世界文化遗产的保护，并推动全球青年参与全球性议题的讨论和解决方案的设计。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 活动报告卡片 -->
+        <div class="row my-5">
+            <div class="col-lg-12">
+                <div class="card p-5 text-center">
+                    <h2 class="section-title" id="report-title">活动报告</h2>
+                    <p id="report-text">下载我们的最新活动报告，了解我们在全球青年文明对话方面取得的成就和进展。</p>
+                    <a href="rapport d'activité GYDCA.pdf" download class="btn btn-light btn-lg mt-3" id="download-button">下载活动报告 (PDF)</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span id="footer-text">&copy; 2024 全球青年文明对话联盟. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- 引入 jQuery 和 Bootstrap 的 JavaScript 文件，以支持交互功能 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 定义包含不同语言文本的翻译对象
+        const translations = {
+            'zh': {
+                navBrand: '全球青年文明对话联盟',
+                navHome: '主页',
+                navAbout: '关于我们',
+                navContact: '联系我们',
+                heroTitle: '欢迎来到全球青年文明对话联盟',
+                heroText: '团结青年力量，共创美好未来。在这里，您可以了解我们的最新动态和项目。',
+                aboutTitle: '关于我们',
+                aboutP1: '全球青年文明对话联盟是在全球化和信息化日益加深的时代背景下应运而生的。随着不同文化和文明之间的交流日益增加，误解和冲突的现象也层出不穷，尤其是青年群体之间的文化隔阂和认知偏差。为此，GYDCA致力于为全球青年提供一个跨文化对话的平台，旨在通过深入的文化交流促进青年间的相互理解与尊重。',
+                aboutP2: 'GYDCA的成立与中国提出的“全球文明对话倡议”密切相关。2013年，中国国家主席习近平提出“文明对话”倡议，倡导通过对话增进不同文明之间的理解与互信，推动世界各国文化的多样性和共同发展。尤其是2023年，习近平主席进一步提出的“全球文明对话倡议”，为全球青年提供了更为广阔的参与空间，激励了GYDCA的成立和发展。',
+                aboutP3: '此外，GYDCA还得到了联合国教科文组织的支持。联合国教科文组织始终致力于推动全球文化多样性与和平，特别是在新时代，科技进步和全球化趋势下，跨文化对话显得尤为重要。GYDCA通过与联合国教科文组织等国际机构的合作，促进世界文化遗产的保护，并推动全球青年参与全球性议题的讨论和解决方案的设计。',
+                reportTitle: '活动报告',
+                reportText: '下载我们的最新活动报告，了解我们在全球青年文明对话方面取得的成就和进展。',
+                downloadButton: '下载活动报告 (PDF)',
+                footerText: '&copy; 2024 全球青年文明对话联盟. All Rights Reserved.'
+            },
+            'en': {
+                navBrand: 'Global Youth Civilizations Dialogue Alliance',
+                navHome: 'Home',
+                navAbout: 'About Us',
+                navContact: 'Contact Us',
+                heroTitle: 'Welcome to the Global Youth Civilizations Dialogue Alliance',
+                heroText: 'Unite the strength of youth and create a better future together. Here, you can learn about our latest developments and projects.',
+                aboutTitle: 'About Us',
+                aboutP1: 'Background of the Association: The Global Youth Civilizations Dialogue Alliance (GYCDA) was born in an era of deepening globalization and information. As exchanges between different cultures and civilizations increase, misunderstandings and conflicts are also emerging, especially cultural gaps and cognitive biases among young people. To this end, GYCDA is committed to providing a platform for cross-cultural dialogue for global youth, aiming to promote mutual understanding and respect through in-depth cultural exchanges.',
+                aboutP2: 'The establishment of GYCDA is closely related to China\'s "Global Civilizations Dialogue Initiative." In 2013, Chinese President Xi Jinping proposed the "civilizations dialogue" initiative, advocating for dialogue to enhance understanding and mutual trust between different civilizations and promote the diversity and common development of cultures worldwide. In particular, in 2023, President Xi Jinping further proposed the "Global Civilizations Dialogue Initiative," which provides a broader space for global youth participation and inspired the establishment and development of GYDCA.',
+                aboutP3: 'In addition, GYCDA has received support from UNESCO. UNESCO has always been committed to promoting global cultural diversity and peace. Especially in the new era, with the progress of technology and the trend of globalization, cross-cultural dialogue is particularly important. GYCDA through its cooperation with international organizations such as UNESCO, promotes the protection of world cultural heritage and encourages global youth to participate in discussions and the design of solutions for global issues.',
+                reportTitle: 'Activity Report',
+                reportText: 'Download our latest activity report to learn about our achievements and progress in global youth civilizations dialogue.',
+                downloadButton: 'Download Activity Report (PDF)',
+                footerText: '&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
+            }
+        };
+
+        // 获取所有需要翻译的元素
+        const elementsToTranslate = {
+            navBrand: document.getElementById('nav-brand-text'),
+            navHome: document.getElementById('nav-home'),
+            navAbout: document.getElementById('nav-about'),
+            navContact: document.getElementById('nav-contact'),
+            heroTitle: document.getElementById('hero-title'),
+            heroText: document.getElementById('hero-text'),
+            aboutTitle: document.getElementById('about-title'),
+            aboutP1: document.getElementById('about-p1'),
+            aboutP2: document.getElementById('about-p2'),
+            aboutP3: document.getElementById('about-p3'),
+            reportTitle: document.getElementById('report-title'),
+            reportText: document.getElementById('report-text'),
+            downloadButton: document.getElementById('download-button'),
+            footerText: document.getElementById('footer-text'),
+        };
+
+        // 切换语言的函数
+        function updateLanguage(lang) {
+            const currentTranslations = translations[lang];
+            for (const key in elementsToTranslate) {
+                if (elementsToTranslate[key] && currentTranslations[key]) {
+                    elementsToTranslate[key].innerHTML = currentTranslations[key];
+                }
+            }
+        }
+
+        // 添加事件监听器
+        document.getElementById('lang-zh').addEventListener('click', (e) => {
+            e.preventDefault();
+            updateLanguage('zh');
+        });
+
+        document.getElementById('lang-en').addEventListener('click', (e) => {
+            e.preventDefault();
+            updateLanguage('en');
+        });
+
+        // 默认加载中文
+        updateLanguage('zh');
+
+        // JavaScript to handle the navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 0) {
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                navbar.style.backdropFilter = 'blur(10px)';
+                navbar.style.webkitBackdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                navbar.style.backdropFilter = 'blur(0px)';
+                navbar.style.webkitBackdropFilter = 'blur(0px)';
+            }
+        });
+    </script>
+</body>
+</html>
