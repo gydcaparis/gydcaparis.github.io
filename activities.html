@@ -119,9 +119,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <!-- 协会标志 -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <!-- 使用新的标志图片 -->
-                <img src="logo globee .jpg" alt="Global Youth Civilizations Dialogue Alliance Logo">
+                <img src="logo globee .webp" alt="Global Youth Civilizations Dialogue Alliance Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -129,16 +129,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="nav-home">Home</a>
+                        <a class="nav-link" href="index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" id="nav-activities">Activities</a>
+                        <a class="nav-link active" aria-current="page" href="activities.html" id="nav-activities">Activities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="nav-about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="nav-contact">Contact Us</a>
+                        <a class="nav-link" href="contact.html" id="nav-contact">Contact Us</a>
                     </li>
                 </ul>
                 <div class="lang-switcher">
@@ -223,6 +223,17 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- 新增的活动报告卡片 -->
+                <div class="row my-5">
+                    <div class="col-lg-12">
+                        <div class="card p-5 text-center">
+                            <h2 class="section-title" id="report-title">Activity Report</h2>
+                            <p id="report-text">Download our latest activity report to learn about our achievements and progress in global youth civilizations dialogue.</p>
+                            <a href="rapport d'activité GYDCA.pdf" download class="btn btn-light btn-lg mt-3" id="download-button">Download Activity Report (PDF)</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -262,6 +273,9 @@
                 cardText5: 'GYDCA参与了享有盛誉的艺术沙龙，展示了来自不同背景的青年艺术家的作品。',
                 cardTitle6: '中文日',
                 cardText6: '在教科文组织总部举办的一场庆祝中国语言和文化的活动，包含多种互动环节。',
+                reportTitle: '活动报告',
+                reportText: '下载我们的最新活动报告，了解我们在全球青年文明对话方面取得的成就和进展。',
+                downloadButton: '下载活动报告 (PDF)',
                 footerText: '&copy; 2024 全球青年文明对话联盟. All Rights Reserved.'
             },
             'en': {
@@ -285,6 +299,9 @@
                 cardText5: 'GYDCA\'s participation in the prestigious art salon to showcase the works of young artists from different backgrounds.',
                 cardTitle6: 'Chinese Language Day',
                 cardText6: 'An event at UNESCO Headquarters celebrating Chinese language and culture with various interactive activities.',
+                reportTitle: 'Activity Report',
+                reportText: 'Download our latest activity report to learn about our achievements and progress in global youth civilizations dialogue.',
+                downloadButton: 'Download Activity Report (PDF)',
                 footerText: '&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
             }
         };
@@ -310,6 +327,9 @@
             cardText5: document.getElementById('card-text-5'),
             cardTitle6: document.getElementById('card-title-6'),
             cardText6: document.getElementById('card-text-6'),
+            reportTitle: document.getElementById('report-title'),
+            reportText: document.getElementById('report-text'),
+            downloadButton: document.getElementById('download-button'),
             footerText: document.getElementById('footer-text'),
         };
 
