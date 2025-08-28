@@ -206,18 +206,19 @@
             <div class="col-lg-12">
                 <div class="card p-5">
                     <h2 class="section-title text-center" id="form-title">Send us a message</h2>
-                    <form>
+                    <!-- 表单已更新，用于提交到 Formspree -->
+                    <form id="contact-form" action="https://formspree.io/f/xzzazqba" method="POST">
                         <div class="mb-3">
                             <label for="name" class="form-label" id="name-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label" id="email-label-form">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label" id="message-label">Your Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Type your message here"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
                         </div>
                         <button type="submit" class="btn btn-light" id="submit-button">Send Message</button>
                     </form>
