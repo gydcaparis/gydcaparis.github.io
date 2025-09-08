@@ -174,7 +174,7 @@
             <div class="col-lg-6">
                 <!-- 描述 -->
                 <div class="card mb-4">
-                    <h3 class="mb-2">Description:</h3>
+                    <h3 class="mb-2" id="description-title">Description:</h3>
                     <p id="activity-description-2">Viva Technology is an annual event dedicated to technological innovation and startups.
 For the 2025 edition of the event, GYDCA enabled six Chinese start-ups to exhibit
 and gain significant visibility thanks to the presence of numerous prestigious guests at
@@ -189,7 +189,7 @@ Tourism.</p>
             <div class="col-lg-6">
                 <!-- 成果 -->
                 <div class="card">
-                    <h3 class="mb-2">Results:</h3>
+                    <h3 class="mb-2" id="results-title">Results:</h3>
                     <ul id="activity-results">
                         <li>Improvement of technological cooperation in a global context</li>
                         <li>Showcasing of 6 startups within the global Vivatech ecosystem: Viaim, Hicool, Rino.ai, OpenPo, Stonedrum, Leion to the public and officials</li>
@@ -218,7 +218,9 @@ Tourism.</p>
                 activityTitle1: 'Vivatech 2025, 中国创新展区',
                 activityDate1: '日期：2025年6月11日至14日',
                 activityLocation1: '地点：1 Pl. de la Porte de Versailles, 75015 Paris',
+                descriptionTitle: '活动介绍:',
                 activityDescription2: 'Viva Technology是一项致力于技术创新和初创公司的年度盛会。在2025年的活动中，GYDCA使六家中国初创公司得以参展，并通过众多重要嘉宾在VivaTech的出席获得了显著的知名度。我们的团队积极为这些初创公司提供机会和交流平台，特别是向出席活动的法国部长们展示了他们的产品。其中包括负责人工智能和数字事务的部长Clara Chappaz，负责贸易、手工业和中小企业的部长Véronique Louwagie，以及负责旅游事务的部长Nathalie Delattre。',
+                resultsTitle: '活动成果:',
                 activityResults: '<li>在全球背景下促进技术合作</li><li>在Vivatech全球生态系统中向公众和官员展示了6家初创公司：Viaim 未来智能、Hicool 嗨酷、Rino白犀牛、OpenPo、Stonedrum、靓靓视野</li>',
                 footerText: '&copy; 2025 全球青年文明对话联盟. All Rights Reserved.'
             },
@@ -231,7 +233,9 @@ Tourism.</p>
                 activityTitle1: 'Vivatech 2025, Innovation Corner',
                 activityDate1: 'Date: June 11-14, 2025',
                 activityLocation1: 'Location: 1 Pl. de la Porte de Versailles, 75015 Paris',
+                descriptionTitle: 'Description:',
                 activityDescription2: 'Viva Technology is an annual event dedicated to technological innovation and startups. For the 2025 edition of the event, GYDCA enabled six Chinese start-ups to exhibit and gain significant visibility thanks to the presence of numerous prestigious guests at VivaTech. Our teams worked actively to provide opportunities and a communication platform for our start-ups, notably by presenting their products to French ministers attending the event. Among them were Clara Chappaz, Minister in charge of Artificial Intelligence and Digital Affairs; Véronique Louwagie, Minister in charge of Trade, Crafts, and Small and Medium Enterprises; and Nathalie Delattre, Minister in charge of Tourism.',
+                resultsTitle: 'Results:',
                 activityResults: '<li>Improvement of technological cooperation in a global context</li><li>Showcasing of 6 startups within the global Vivatech ecosystem: Viaim, Hicool, Rino.ai, OpenPo, Stonedrum, Leion to the public and officials</li>',
                 footerText: '&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
             }
@@ -246,7 +250,9 @@ Tourism.</p>
             activityTitle1: document.getElementById('activity-title-1'),
             activityDate1: document.getElementById('activity-date-1'),
             activityLocation1: document.getElementById('activity-location-1'),
+            descriptionTitle: document.getElementById('description-title'),
             activityDescription2: document.getElementById('activity-description-2'),
+            resultsTitle: document.getElementById('results-title'),
             activityResults: document.getElementById('activity-results'),
             footerText: document.getElementById('footer-text'),
         };

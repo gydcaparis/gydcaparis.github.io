@@ -105,7 +105,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../images/logo globee .webp" alt="Global Youth Civilizations Dialogue Alliance Logo">
+                <img src="activity images/dialogue-between-civilisations/dialogue-between-civilisations-1.webp" alt="Global Youth Civilizations Dialogue Alliance Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -116,10 +116,10 @@
                         <a class="nav-link" href="../index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../activities.html">Activities</a>
+                        <a class="nav-link" href="../activities.html" id="nav-activities">Activities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about-us-section">About Us</a>
+                        <a class="nav-link" href="../index.html#about-us-section" id="nav-about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contact.html" id="nav-contact">Contact Us</a>
@@ -144,13 +144,13 @@
                 <div class="carousel-item">
                     <img src="activity images/dialogue-between-civilisations/dialogue-between-civilisations-2.webp" class="d-block w-100" alt="image 2">
                 </div>
-                   <div class="carousel-item">
+                <div class="carousel-item">
                     <img src="activity images/dialogue-between-civilisations/dialogue-between-civilisations-3.webp" class="d-block w-100" alt="image 3">
                 </div>
-                 <div class="carousel-item">
+                <div class="carousel-item">
                     <img src="activity images/dialogue-between-civilisations/dialogue-between-civilisations-4.webp" class="d-block w-100" alt="image 4">
                 </div>
-                 <div class="carousel-item">
+                <div class="carousel-item">
                     <img src="activity images/dialogue-between-civilisations/dialogue-between-civilisations-5.webp" class="d-block w-100" alt="image 5">
                 </div>
             </div>
@@ -165,7 +165,7 @@
             <!-- 叠加在横幅上方的卡片 -->
             <div class="card hero-overlay-card">
                 <h2 class="section-title text-start" id="activity-title-1">International Forum on Dialogue Between Civilizations and the Youth of the World</h2>
-                <p class="text-muted mb-2 text-start" id="activity-date-1">Date : June 10, 2025</p>
+                <p class="text-muted mb-2 text-start" id="activity-date-1">Date: June 10, 2025</p>
                 <p class="text-start mb-4" id="activity-location-1"><strong>Location:</strong> UNESCO Headquarters, 7 Place de Fontenoy, 75007 Paris</p>
             </div>
         </div>
@@ -174,20 +174,24 @@
             <div class="col-lg-6">
                 <!-- 描述 -->
                 <div class="card mb-4">
-                    <h3 class="mb-2">Description:</h3>
+                    <h3 class="mb-2" id="description-title">Description:</h3>
                     <p id="activity-description-2">This conference aims to bring together young people from around the world who have led innovative actions, strengthening exchanges in areas such as education, culture, and innovation. The goal is to foster communication and understanding between youth, while contributing to the UNESCO-supported mission of dialogue between civilizations. Numerous speakers, including young leaders, experts, and actors from education, art, innovation, and other sectors, will participate. The event will focus on intercultural cooperation, highlighting the talents of global youth within a diverse international context.</p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <!-- 成果 -->
                 <div class="card">
-                    <h3 class="mb-2">Results:</h3>
-                    <ul id="activity-results">
-                        <li>Number of participants : 200</li>
-                        <li>Facilitation of international dialogue and new cooperation opportunities</li>
-                        <li>Promotion of innovative projects (awards presented)</li>
-                        <li>Support for UNESCO’s mission</li>
-                        <li>Participation of international artists to highlight intangible cultures</li>
+                    <h3 class="mb-2" id="results-title">Results:</h3>
+                    <!-- 修复了ID重复问题 -->
+                    <ul id="activity-results-list">
+                        <li>
+                            <strong id="results-participants-title">Number of participants:</strong>
+                            <span id="activity-results-participants">200</span>
+                        </li>
+                        <li id="result-item-1">Facilitation of international dialogue and new cooperation opportunities</li>
+                        <li id="result-item-2">Promotion of innovative projects (awards to be presented)</li>
+                        <li id="result-item-3">Support for UNESCO’s mission</li>
+                        <li id="result-item-4">Participation of international artists to highlight intangible cultures</li>
                     </ul>
                 </div>
             </div>
@@ -213,8 +217,15 @@
                 activityTitle1: '联合国青年文明对话国际日',
                 activityDate1: '日期：2025年6月10日',
                 activityLocation1: '地点：联合国教科文组织总部，7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: '活动介绍:',
                 activityDescription2: '本次会议旨在汇聚来自世界各地的青年创新行动者，加强在教育、文化和创新等领域的交流。目标是促进青年之间的沟通与理解，同时为联合国教科文组织支持的文明对话使命做出贡献。众多演讲者将参与其中，包括青年领袖、专家以及来自教育、艺术、创新等领域的行动者。本次活动将专注于跨文化合作，在全球多元化的背景下突出全球青年的才华。',
-                activityResults: '<li>参与人数：200</li><li>促进国际对话和新的合作机会</li><li>推广创新项目</li><li>支持联合国教科文组织的使命</li><li>国际艺术家参与，以彰显非物质文化</li>',
+                resultsTitle: '活动成果:',
+                resultsParticipantsTitle: '参与人数：',
+                activityResultsParticipants: '200',
+                resultItem1: '促进国际对话和新的合作机会',
+                resultItem2: '推广创新项目',
+                resultItem3: '支持联合国教科文组织的使命',
+                resultItem4: '国际艺术家参与，以彰显非物质文化',
                 footerText: '&copy; 2025 全球青年文明对话联盟. All Rights Reserved.'
             },
             'en': {
@@ -226,8 +237,15 @@
                 activityTitle1: 'International Forum on Dialogue Between Civilizations and the Youth of the World',
                 activityDate1: 'Date: June 10, 2025',
                 activityLocation1: 'Location: UNESCO Headquarters, 7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: 'Description:',
                 activityDescription2: 'This conference aims to bring together young people from around the world who have led innovative actions, strengthening exchanges in areas such as education, culture, and innovation. The goal is to foster communication and understanding between youth, while contributing to the UNESCO-supported mission of dialogue between civilizations. Numerous speakers, including young leaders, experts, and actors from education, art, innovation, and other sectors, will participate. The event will focus on intercultural cooperation, highlighting the talents of global youth within a diverse international context.',
-                activityResults: '<li>Number of participants : 200</li><li>Facilitation of international dialogue and new cooperation opportunities</li><li>Promotion of innovative projects (awards to be presented)</li><li>Support for UNESCO’s mission</li><li>Participation of international artists to highlight intangible cultures</li>',
+                resultsTitle: 'Results:',
+                resultsParticipantsTitle: 'Number of participants:',
+                activityResultsParticipants: '200',
+                resultItem1: 'Facilitation of international dialogue and new cooperation opportunities',
+                resultItem2: 'Promotion of innovative projects (awards to be presented)',
+                resultItem3: 'Support for UNESCO’s mission',
+                resultItem4: 'Participation of international artists to highlight intangible cultures',
                 footerText: '&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
             }
         };
@@ -241,8 +259,15 @@
             activityTitle1: document.getElementById('activity-title-1'),
             activityDate1: document.getElementById('activity-date-1'),
             activityLocation1: document.getElementById('activity-location-1'),
+            descriptionTitle: document.getElementById('description-title'),
             activityDescription2: document.getElementById('activity-description-2'),
-            activityResults: document.getElementById('activity-results'),
+            resultsTitle: document.getElementById('results-title'),
+            resultsParticipantsTitle: document.getElementById('results-participants-title'),
+            activityResultsParticipants: document.getElementById('activity-results-participants'),
+            resultItem1: document.getElementById('result-item-1'),
+            resultItem2: document.getElementById('result-item-2'),
+            resultItem3: document.getElementById('result-item-3'),
+            resultItem4: document.getElementById('result-item-4'),
             footerText: document.getElementById('footer-text'),
         };
         // 切换语言的函数
@@ -253,7 +278,7 @@
                     if (key === 'pageTitle') {
                         document.title = currentTranslations[key];
                     } else {
-                        elementsToTranslate[key].innerHTML = currentTranslations[key];
+                        elementsToTranslate[key].textContent = currentTranslations[key];
                     }
                 }
             }

@@ -105,7 +105,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../images/logo globee .webp" alt="Global Youth Civilizations Dialogue Alliance Logo">
+                <img src="activity images/logo globee .webp" alt="Global Youth Civilizations Dialogue Alliance Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -116,10 +116,10 @@
                         <a class="nav-link" href="../index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../activities.html">Activities</a>
+                        <a class="nav-link" href="../activities.html" id="nav-activities">Activities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about-us-section">About Us</a>
+                        <a class="nav-link" href="../index.html#about-us-section" id="nav-about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contact.html" id="nav-contact">Contact Us</a>
@@ -169,19 +169,19 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <!-- 第二张卡片，只包含描述 -->
+                <!-- 描述 -->
                 <div class="card mb-4">
-                    <h3 class="mb-2">Description:</h3>
+                    <h3 class="mb-2" id="description-title">Description:</h3>
                     <p id="activity-description-2">This event offered a rare opportunity for about 100 attendees to experience a performance by China’s National Traditional Orchestra in France. The concert celebrated China’s intangible cultural heritage, showcasing the country’s rich musical traditions through ancient instruments performed by internationally renowned artists.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <!-- 新卡片，只包含结果 -->
+                <!-- 结果 -->
                 <div class="card">
-                    <h3 class="mb-2">Results:</h3>
+                    <h3 class="mb-2" id="results-title">Results:</h3>
                     <ul>
-                        <li><strong>Number of participants:</strong> <span id="activity-results-participants">100</span></li>
-                        <li><strong>Impact:</strong> <span id="activity-results-impact">Highlighted Chinese intangible heritage and UNESCO through collaborations with influencers and the social media networks of prominent artists.</span></li>
+                        <li><strong id="results-participants-title">Number of participants:</strong> <span id="activity-results-participants">100</span></li>
+                        <li><strong id="results-impact-title">Impact:</strong> <span id="activity-results-impact">Highlighted Chinese intangible heritage and UNESCO through collaborations with influencers and the social media networks of prominent artists.</span></li>
                         <li id="activity-results-influence">Increase of UNESCO’s influence in China</li>
                     </ul>
                 </div>
@@ -191,7 +191,7 @@
     <!-- 页脚 -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span id="footer-text">&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.</span>
+            <span id="footer-text">&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.</span>
         </div>
     </footer>
     <!-- 引入 Bootstrap 的 JavaScript 文件 -->
@@ -208,11 +208,15 @@
                 activityTitle1: '联合国教科文组织中央民族乐团音乐会',
                 activityDate1: '日期：2024年10月29日',
                 activityLocation1: '地点：联合国教科文组织总部，7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: '活动介绍:',
                 activityDescription2: '本次活动为约100名与会者提供了难得的机会，在法国观赏中国中央民族乐团的演出。这场音乐会旨在弘扬中国的非物质文化遗产，通过国际知名艺术家演奏的古老乐器，展示了中国丰富的音乐传统。',
+                resultsTitle: '活动成果:',
+                resultsParticipantsTitle: '参与人数：',
+                resultsImpactTitle: '影响：', 
                 activityResultsParticipants: '100',
                 activityResultsImpact: '通过与网红和知名艺术家的社交网络合作，突显了中国的非物质文化遗产和联合国教科文组织。',
                 activityResultsInfluence: '提升了联合国教科文组织在中国的影响力',
-                footerText: '&copy; 2024 全球青年文明对话联盟. All Rights Reserved.'
+                footerText: '&copy; 2025 全球青年文明对话联盟. All Rights Reserved.'
             },
             'en': {
                 pageTitle: 'Academic Seminar - Global Youth Civilizations Dialogue Alliance',
@@ -223,11 +227,15 @@
                 activityTitle1: 'Concert at UNESCO by the CNTO Chinese National Traditional Orchestra',
                 activityDate1: 'Date: October 29th, 2024',
                 activityLocation1: 'Location: UNESCO Headquarters, 7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: 'Description:', 
                 activityDescription2: 'This event offered a rare opportunity for about 100 attendees to experience a performance by China’s National Traditional Orchestra in France. The concert celebrated China’s intangible cultural heritage, showcasing the country’s rich musical traditions through ancient instruments performed by internationally renowned artists.',
+                resultsTitle: 'Results:',
+                resultsParticipantsTitle: 'Number of participants:',
+                resultsImpactTitle: 'Impact:',
                 activityResultsParticipants: '100',
                 activityResultsImpact: 'Highlighted Chinese intangible heritage and UNESCO through collaborations with influencers and the social media networks of prominent artists.',
                 activityResultsInfluence: 'Increase of UNESCO’s influence in China',
-                footerText: '&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
+                footerText: '&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
             }
         };
         // 获取所有需要翻译的元素
@@ -240,8 +248,12 @@
             activityTitle1: document.getElementById('activity-title-1'),
             activityDate1: document.getElementById('activity-date-1'),
             activityLocation1: document.getElementById('activity-location-1'),
+            descriptionTitle: document.getElementById('description-title'),
             activityDescription2: document.getElementById('activity-description-2'),
+            resultsTitle: document.getElementById('results-title'),
+            resultsParticipantsTitle: document.getElementById('results-participants-title'),
             activityResultsParticipants: document.getElementById('activity-results-participants'),
+            resultsImpactTitle:document.getElementById('results-impact-title'),
             activityResultsImpact: document.getElementById('activity-results-impact'),
             activityResultsInfluence: document.getElementById('activity-results-influence'),
             footerText: document.getElementById('footer-text'),
@@ -254,7 +266,8 @@
                     if (key === 'pageTitle') {
                         document.title = currentTranslations[key];
                     } else {
-                        elementsToTranslate[key].innerHTML = currentTranslations[key];
+                        // 使用 textContent 以确保只插入文本内容，避免潜在的安全问题
+                        elementsToTranslate[key].textContent = currentTranslations[key];
                     }
                 }
             }

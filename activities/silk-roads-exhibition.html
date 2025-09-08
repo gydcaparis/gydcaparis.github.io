@@ -116,10 +116,10 @@
                         <a class="nav-link" href="../index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../activities.html">Activities</a>
+                        <a class="nav-link" href="../activities.html" id="nav-activities">Activities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about-us-section">About Us</a>
+                        <a class="nav-link" href="../index.html#about-us-section" id="nav-about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contact.html" id="nav-contact">Contact Us</a>
@@ -144,7 +144,7 @@
                 <div class="carousel-item">
                     <img src="activity images/silk-roads-exhibition/silk-road-exhibition-2.jpg" class="d-block w-100" alt="seminar image 5">
                 </div>
-                   <div class="carousel-item">
+                <div class="carousel-item">
                     <img src="activity images/silk-roads-exhibition/silk-road-exhibition-3.jpg" class="d-block w-100" alt="seminar image 5">
                 </div>
             </div>
@@ -168,18 +168,19 @@
             <div class="col-lg-6">
                 <!-- 描述 -->
                 <div class="card mb-4">
-                    <h3 class="mb-2">Description:</h3>
+                    <h3 class="mb-2" id="description-title">Description:</h3>
                     <p id="activity-description-2">This event will explore the architectural legacy and urban development of the Silk Roads. Participants will discuss the preservation of historical monuments and how modern urban planning can learn from these ancient routes.</p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <!-- 成果 -->
                 <div class="card">
-                    <h3 class="mb-2">Results:</h3>
+                    <h3 class="mb-2" id="results-title">Results:</h3>
                     <ul id="activity-results">
-                        <li><strong>Number of participants:</strong> <span id="activity-results-participants">50+</span></li>
-                        <li><strong>Media Coverage:</strong> <span id="activity-results-media">Key discussions focused on sustainable preservation and cross-cultural urban design.</span></li>
-                        <li><strong>Participant Feedback:</strong> <span id="activity-results-feedback">Attendees gained a deeper understanding of the Silk Road's architectural history and its relevance to contemporary urban challenges.</span></li>
+                        <!-- 添加了新的 ID 来修复语言切换错误 -->
+                        <li><strong id="results-participants-title">Number of participants:</strong> <span id="activity-results-participants">50+</span></li>
+                        <li><strong id="results-media-title">Media Coverage:</strong> <span id="activity-results-media">Key discussions focused on sustainable preservation and cross-cultural urban design.</span></li>
+                        <li><strong id="results-feedback-title">Participant Feedback:</strong> <span id="activity-results-feedback">Attendees gained a deeper understanding of the Silk Road's architectural history and its relevance to contemporary urban challenges.</span></li>
                     </ul>
                 </div>
             </div>
@@ -205,11 +206,16 @@
                 activityTitle1: '丝绸之路沿线的建筑、古迹和城市规划',
                 activityDate1: '日期：2024年12月4日',
                 activityLocation1: '地点：联合国教科文组织总部，7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: '活动介绍:',
                 activityDescription2: '本次活动将探讨丝绸之路的建筑遗产和城市发展。与会者将讨论历史古迹的保护以及现代城市规划如何从这些古老路线中汲取经验。',
+                resultsTitle: '活动成果:',
+                resultsParticipantsTitle: '参与人数：',
+                resultsMediaTitle: '媒体报道：',
+                resultsFeedbackTitle: '参会者反馈：',
                 activityResultsParticipants: '50+',
                 activityResultsMedia: '主要讨论集中在可持续保护和跨文化城市设计上。',
                 activityResultsFeedback: '与会者更深入地了解了丝绸之路的建筑历史及其与当代城市挑战的相关性。',
-                footerText: '&copy; 2025 全球青年文明对话联盟. All Rights Reserved.'
+                footerText: '© 2025 全球青年文明对话联盟. 保留所有权利。'
             },
             'en': {
                 pageTitle: 'Silk roads exhibition - Global Youth Civilizations Dialogue Alliance',
@@ -220,7 +226,13 @@
                 activityTitle1: 'Architecture, Monuments, and Urban Planning along the Silk Roads',
                 activityDate1: 'Date: December, 4th, 2024',
                 activityLocation1: 'Location: UNESCO Headquarters, 7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: 'Description:',
                 activityDescription2: 'This event will explore the architectural legacy and urban development of the Silk Roads. Participants will discuss the preservation of historical monuments and how modern urban planning can learn from these ancient routes.',
+                resultsTitle: 'Results:',
+                // 添加了新 ID 的英文文本
+                resultsParticipantsTitle: 'Number of participants:',
+                resultsMediaTitle: 'Media Coverage:',
+                resultsFeedbackTitle: 'Participant Feedback:',
                 activityResultsParticipants: '50+',
                 activityResultsMedia: 'Key discussions focused on sustainable preservation and cross-cultural urban design.',
                 activityResultsFeedback: 'Attendees gained a deeper understanding of the Silk Road\'s architectural history and its relevance to contemporary urban challenges.',
@@ -237,7 +249,13 @@
             activityTitle1: document.getElementById('activity-title-1'),
             activityDate1: document.getElementById('activity-date-1'),
             activityLocation1: document.getElementById('activity-location-1'),
+            descriptionTitle: document.getElementById('description-title'),
             activityDescription2: document.getElementById('activity-description-2'),
+            resultsTitle: document.getElementById('results-title'),
+            // 更新了元素获取方式，现在直接获取 strong 和 span 元素
+            resultsParticipantsTitle: document.getElementById('results-participants-title'),
+            resultsMediaTitle: document.getElementById('results-media-title'),
+            resultsFeedbackTitle: document.getElementById('results-feedback-title'),
             activityResultsParticipants: document.getElementById('activity-results-participants'),
             activityResultsMedia: document.getElementById('activity-results-media'),
             activityResultsFeedback: document.getElementById('activity-results-feedback'),
@@ -246,12 +264,14 @@
         // 切换语言的函数
         function updateLanguage(lang) {
             const currentTranslations = translations[lang];
+            // 使用 for-in 循环来遍历所有需要翻译的元素
             for (const key in elementsToTranslate) {
-                if (elementsToTranslate[key]) {
+                const element = elementsToTranslate[key];
+                if (element) {
                     if (key === 'pageTitle') {
                         document.title = currentTranslations[key];
                     } else {
-                        elementsToTranslate[key].innerHTML = currentTranslations[key];
+                        element.textContent = currentTranslations[key];
                     }
                 }
             }

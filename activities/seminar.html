@@ -116,10 +116,10 @@
                         <a class="nav-link" href="../index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../activities.html">Activities</a>
+                        <a class="nav-link" href="../activities.html" id="nav-activities">Activities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about-us-section">About Us</a>
+                        <a class="nav-link" href="../index.html#about-us-section" id="nav-about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../contact.html" id="nav-contact">Contact Us</a>
@@ -168,18 +168,18 @@
             <div class="col-lg-6">
                 <!-- 描述 -->
                 <div class="card mb-4">
-                    <h3 class="mb-2">Description:</h3>
+                    <h3 class="mb-2" id="description-title">Description:</h3>
                     <p id="activity-description-2">This event brought together over fifty participants for an academic seminar focused on raising awareness of intangible cultural heritage preservation. The seminar provided greater visibility for the "Exhibition on the Mural Art of the Yongle Palace," featuring experts in cultural heritage conservation, particularly in the application of AI technology.</p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <!-- 结果 -->
                 <div class="card">
-                    <h3 class="mb-2">Results:</h3>
+                    <h3 class="mb-2" id="results-title">Results:</h3>
                     <ul id="activity-results">
-                        <li><strong>Number of participants:</strong> <span id="activity-results-participants">50+</span></li>
-                        <li><strong>Media Coverage:</strong> <span id="activity-results-media">Featured in Chinese media outlets such as People's Daily and on the China Expo website.</span></li>
-                        <li><strong>Participant Feedback:</strong> <span id="activity-results-feedback">Attendees gained in-depth insights into the use of AI and emerging technologies in preserving global cultural heritage.</span></li>
+                        <li><strong id="results-participants-title">Number of participants:</strong> <span id="activity-results-participants">50+</span></li>
+                        <li><strong id="results-media-title">Media Coverage:</strong> <span id="activity-results-media">Featured in Chinese media outlets such as People's Daily and on the China Expo website.</span></li>
+                        <li><strong id="results-feedback-title">Participant Feedback:</strong> <span id="activity-results-feedback">Attendees gained in-depth insights into the use of AI and emerging technologies in preserving global cultural heritage.</span></li>
                     </ul>
                 </div>
             </div>
@@ -188,7 +188,7 @@
     <!-- 页脚 -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span id="footer-text">&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.</span>
+            <span id="footer-text">&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.</span>
         </div>
     </footer>
     <!-- 引入 Bootstrap 的 JavaScript 文件 -->
@@ -204,12 +204,17 @@
                 navContact: '联系我们',
                 activityTitle1: '学术研讨会：数字创意时代的人类艺术遗产',
                 activityDate1: '日期：2024年6月',
-                activityLocation1: '地点：联合国教科文组织总部，7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: '活动介绍:',
+                activityLocation1: '地点：联合国教科文组织总部, 7 Place de Fontenoy, 75007 Paris',
                 activityDescription2: '本次活动汇集了五十多名参与者，举办了一场学术研讨会，旨在提高人们对非物质文化遗产保护的认识。本次研讨会为“永乐宫壁画艺术展”提供了更高的关注度，并邀请了文化遗产保护领域的专家，特别是人工智能技术应用方面的专家。',
+                resultsTitle: '活动成果:',
+                resultsParticipantsTitle: '参与人数：',
+                resultsMediaTitle: '媒体报道：',
+                resultsFeedbackTitle: '参会者反馈：',
                 activityResultsParticipants: '50+',
                 activityResultsMedia: '获得《人民日报》等中国媒体和中国博览会网站的报道。',
                 activityResultsFeedback: '与会者深入了解了人工智能和新兴技术在全球文化遗产保护中的应用。',
-                footerText: '&copy; 2024 全球青年文明对话联盟. All Rights Reserved.'
+                footerText: '&copy; 2025 全球青年文明对话联盟. All Rights Reserved.'
             },
             'en': {
                 pageTitle: 'Academic Seminar - Global Youth Civilizations Dialogue Alliance',
@@ -220,11 +225,16 @@
                 activityTitle1: 'Academic Seminar: Human Artistic Heritage in the Digital Creative Era',
                 activityDate1: 'Date: June 2024',
                 activityLocation1: 'Location: UNESCO Headquarters, 7 Place de Fontenoy, 75007 Paris',
+                descriptionTitle: 'Description:',
                 activityDescription2: 'This event brought together over fifty participants for an academic seminar focused on raising awareness of intangible cultural heritage preservation. The seminar provided greater visibility for the "Exhibition on the Mural Art of the Yongle Palace," featuring experts in cultural heritage conservation, particularly in the application of AI technology.',
+                resultsTitle: 'Results:',
+                resultsParticipantsTitle: 'Number of participants:',
+                resultsMediaTitle: 'Media Coverage:',
+                resultsFeedbackTitle: 'Participant Feedback:',
                 activityResultsParticipants: '50+',
                 activityResultsMedia: 'Featured in Chinese media outlets such as People\'s Daily and on the China Expo website.',
                 activityResultsFeedback: 'Attendees gained in-depth insights into the use of AI and emerging technologies in preserving global cultural heritage.',
-                footerText: '&copy; 2024 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
+                footerText: '&copy; 2025 Global Youth Civilizations Dialogue Alliance. All Rights Reserved.'
             }
         };
         // 获取所有需要翻译的元素
@@ -237,7 +247,13 @@
             activityTitle1: document.getElementById('activity-title-1'),
             activityDate1: document.getElementById('activity-date-1'),
             activityLocation1: document.getElementById('activity-location-1'),
+            descriptionTitle: document.getElementById('description-title'),
             activityDescription2: document.getElementById('activity-description-2'),
+             resultsTitle: document.getElementById('results-title'),
+            // 更新了元素获取方式，现在直接获取 strong 和 span 元素
+            resultsParticipantsTitle: document.getElementById('results-participants-title'),
+            resultsMediaTitle: document.getElementById('results-media-title'),
+            resultsFeedbackTitle: document.getElementById('results-feedback-title'),
             activityResultsParticipants: document.getElementById('activity-results-participants'),
             activityResultsMedia: document.getElementById('activity-results-media'),
             activityResultsFeedback: document.getElementById('activity-results-feedback'),
