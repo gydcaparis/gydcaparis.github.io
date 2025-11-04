@@ -15,8 +15,16 @@
         }
         /* 设置导航栏的样式，使其背景半透明，并带有一些圆角 */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0); /* 初始完全透明 */
+            backdrop-filter: blur(0px); /* 初始无模糊 */
+            -webkit-backdrop-filter: blur(0px);
+            transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+        }
+
+        /* 导航栏滚动后的样式：半透明且带模糊效果 (由 JS 添加 .scrolled 类触发) */
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.7); /* 滚动后半透明 */
+            backdrop-filter: blur(10px); /* 滚动后添加毛玻璃效果 */
             -webkit-backdrop-filter: blur(10px);
         }
         /* 导航栏品牌和链接的样式 */
@@ -105,7 +113,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../images/logo globee.webp" alt="GYDCA Logo">
+                <img src="../images/logo-globee.webp" alt="GYDCA Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
