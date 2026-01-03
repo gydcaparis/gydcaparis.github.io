@@ -23,30 +23,63 @@ body {
     padding: 2.8rem;
     margin-bottom: 2.2rem;
 }
-p { line-height: 1.75; font-size: 1.05rem; }
+p {
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
 .lang-switcher a {
     color: #fff;
     margin-left: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
+.navbar {
+    backdrop-filter: blur(6px);
+}
 </style>
 </head>
 
 <body>
 
-<nav class="navbar fixed-top bg-dark bg-opacity-50">
+<!-- ✅ 修复后的统一导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-50">
   <div class="container">
-    <span class="navbar-brand text-white fw-bold">GYDCA</span>
-    <div class="lang-switcher">
-      <a onclick="setLang('zh')">中文</a>
-      <a onclick="setLang('en')">EN</a>
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <img src="../images/logo-globee.webp" alt="GYDCA Logo" style="height:60px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../activities.html">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#about-us-section">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../contact.html">Contact Us</a>
+        </li>
+      </ul>
+
+      <div class="lang-switcher ms-4">
+        <a onclick="setLang('zh')">中文</a>
+        <a onclick="setLang('en')">EN</a>
+      </div>
     </div>
   </div>
 </nav>
 
 <main class="container content-section">
-
 <div class="card">
   <h1 id="title"></h1>
   <h4 id="subtitle" class="mt-3"></h4>
@@ -172,25 +205,31 @@ follow: "Follow us on Instagram @gydca.youth and join our WhatsApp Global Youth 
 }
 
 function setLang(lang) {
+document.title = translations[lang].title;
 document.getElementById("page-title").innerText = translations[lang].title;
+
 for (const key in translations[lang]) {
-if (document.getElementById(key)) {
-document.getElementById(key).innerHTML = translations[lang][key];
+  if (document.getElementById(key)) {
+    document.getElementById(key).innerHTML = translations[lang][key];
+  }
 }
-}
+
 const list = document.getElementById("benefits");
 list.innerHTML = "";
 translations[lang].benefits.forEach(i => {
-const li = document.createElement("li");
-li.innerText = i;
-list.appendChild(li);
+  const li = document.createElement("li");
+  li.innerText = i;
+  list.appendChild(li);
 });
+
 document.getElementById("applyLink").href = translations[lang].applyLink;
 document.getElementById("applyLink").innerText = translations[lang].applyLabel;
 }
 
 setLang("en");
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
