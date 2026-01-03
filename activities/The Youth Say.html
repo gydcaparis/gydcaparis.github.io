@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">GYDCA | Global Youth Correspondents 2026</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background-color: #55ABED;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+.content-section {
+    padding: 120px 0 70px;
+    max-width: 900px;
+}
+.card {
+    background-color: rgba(255,255,255,0.12);
+    border-radius: 1rem;
+    padding: 2.8rem;
+    margin-bottom: 2.2rem;
+}
+p { line-height: 1.75; font-size: 1.05rem; }
+.lang-switcher a {
+    color: #fff;
+    margin-left: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar fixed-top bg-dark bg-opacity-50">
+  <div class="container">
+    <span class="navbar-brand text-white fw-bold">GYDCA</span>
+    <div class="lang-switcher">
+      <a onclick="setLang('zh')">中文</a>
+      <a onclick="setLang('en')">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container content-section">
+
+<div class="card">
+  <h1 id="title"></h1>
+  <h4 id="subtitle" class="mt-3"></h4>
+  <p id="deadline" class="fw-semibold mt-3"></p>
+  <p id="contact"></p>
+</div>
+
+<div class="card">
+  <p id="p1"></p>
+  <p id="p2"></p>
+  <p id="p3"></p>
+  <p id="p4"></p>
+  <p id="p5"></p>
+</div>
+
+<div class="card">
+  <p id="p6"></p>
+  <p id="p7"></p>
+  <p id="p8"></p>
+</div>
+
+<div class="card">
+  <p id="p9"></p>
+  <p id="p10"></p>
+  <p id="p11"></p>
+</div>
+
+<div class="card">
+  <p id="p12"></p>
+  <p id="p13"></p>
+</div>
+
+<div class="card">
+  <h3 id="benefitsTitle"></h3>
+  <ul id="benefits"></ul>
+</div>
+
+<div class="card text-center">
+  <p id="applyText" class="fw-bold"></p>
+  <a id="applyLink" target="_blank"></a>
+  <p id="follow"></p>
+</div>
+
+</main>
+
+<script>
+const translations = {
+zh: {
+title: "GYDCA｜全球青年 Correspondents 2026 招募计划",
+subtitle: "The Youth Say｜全球青话会 · 世界青年视频共创项目",
+deadline: "📢 Expression of Interest 报名现已开放<br>首期全球青年 Correspondents 报名截止：2026 年 2 月 9 日",
+contact: "如有任何疑问，欢迎联系：contact@gydca.org",
+
+p1: "你是否曾想过，如果世界各地的青年，能够真正彼此看见、彼此倾听，会发生什么？",
+p2: "在一个信息高度流通、却依然充满误解与隔阂的时代，青年正在成为最有能力跨越文化、语言与边界的一代。我们生活在不同的城市，说着不同的语言，却面对着相似的焦虑、希望与问题。",
+p3: "正是在这样的背景下，GYDCA｜全球青年文明对话联盟 发起了 The Youth Say 全球青话会 世界青年视频共创计划。",
+p4: "这是一个面向全球的青年内容与对话项目。我们希望邀请来自不同国家、文化与语言背景的青年，通过影像、故事与真实的生活记录，讲述“我是谁”“我从哪里来”“我如何看待这个世界”。",
+p5: "你不需要是专业记者，也不需要昂贵的设备。一部手机、一份真实的表达欲、一次愿意分享的勇气，已经足够。",
+
+p6: "作为 GYDCA 全球青年 Correspondent（青年报道员），你将参与一项持续进行的全球视频共创计划。",
+p7: "你可以记录自己的一天，介绍你所在城市的日常与地标，与来自另一座城市、另一个国家的青年共同完成一次“平行记录”，或者讲述一个真正影响你成长的故事。",
+p8: "你也可以在视频结尾，向世界另一端的青年抛出一个问题，让对话在不同文化之间接力展开。",
+
+p9: "所有内容将被联合剪辑与呈现，最终形成一幅不断扩展的“世界青年群像”——不是被代表的青年，而是正在说话的青年。",
+p10: "在创作之外，这也是一个持续展开的青年议题对话空间。",
+p11: "项目将与 UNESCO 及其青年议程建立长期互动，围绕国际教育日、国际妇女节、非洲日、国际青年日、世界文化多样性日、UNESCO 世界青年峰会等节点展开共创。",
+
+p12: "你将加入一个真实而活跃的全球青年社群。",
+p13: "我们也将定期举办 Salon de Thé 青年文明对话沙龙，邀请学者、媒体人与青年行动者展开交流。",
+
+benefitsTitle: "加入 GYDCA 全球青年 Correspondents，你将获得：",
+benefits: [
+"加入跨文化全球青年网络,拓展国际视野与跨文化理解能力",
+"署名发布你的作品，积累作品与个人表达成果",
+"前往巴黎，优先参与 UNESCO 青年峰会以及相关青年活动",
+"积累媒体与国际事务实践经验，构建未来的学术，职业活公共参与优势",
+"有机会获得GYDCA项目参与以及实习机会，并出具官方证明与推荐信"
+],
+
+applyText: "加入 GYDCA 首期全球青年 Correspondents",
+applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSfYx8v9KArBlgy4ny21Xt9LESt1YcjoFHffSTRzMk5WRqm6uQ/viewform",
+applyLabel: "立即报名（截止 2026 年 2 月 9 日）",
+follow: "欢迎关注 INS：@gydca.youth 并加入 WhatsApp 全球青年社群"
+},
+
+en: {
+title: "GYDCA | Global Youth Correspondents 2026 Recruitment",
+subtitle: "The Youth Say | A Global Youth Video Co-Creation Project",
+deadline: "📢 Expression of Interest is now open<br>First cohort application deadline: February 9, 2026",
+contact: "For inquiries, please contact: contact@gydca.org",
+
+p1: "Have you ever wondered what would happen if young people from around the world could truly see one another and truly listen to one another?",
+p2: "In an age of rapid information flow, yet persistent misunderstanding and division, young people are becoming the generation most capable of crossing cultural, linguistic, and geographic boundaries. We live in different cities, speak different languages, yet face similar anxieties, hopes, and questions about the future.",
+p3: "It is in this context that GYDCA | the Global Youth Dialogue among Civilizations Alliance launches The Youth Say, a global youth video co-creation initiative.",
+p4: "This is a global platform for youth storytelling and dialogue. We invite young people from diverse countries, cultures, and linguistic backgrounds to use video, personal stories, and everyday life experiences to explore who they are, where they come from, and how they see the world.",
+p5: "You do not need to be a professional journalist, nor do you need expensive equipment. A mobile phone, a genuine desire to express yourself, and the courage to share are enough.",
+
+p6: "As a GYDCA Global Youth Correspondent, you will take part in an ongoing global video co-creation process.",
+p7: "You may document a day in your life, introduce the everyday scenes and landmarks of your city, collaborate with a young person from another city or country, or share a story that has truly shaped who you are.",
+p8: "You may also end your video by posing a question to a young person on the other side of the world, allowing dialogue to travel across cultures.",
+
+p9: "All contributions will be jointly curated and edited, forming an ever-growing global portrait of youth — not youth being spoken for, but youth speaking for themselves.",
+p10: "Beyond content creation, this project is also an evolving space for dialogue on youth issues.",
+p11: "The project will establish long-term engagement with UNESCO youth agendas, responding to International Day of Education, International Women’s Day, Africa Day, International Youth Day, World Day for Cultural Diversity, the UNESCO World Youth Conference, and other key moments.",
+
+p12: "You will become part of a vibrant and active global youth community.",
+p13: "We will also host regular Salon de Thé Youth Dialogue Salons, bringing together scholars, media professionals, UNESCO project participants, and youth changemakers.",
+
+benefitsTitle: "By joining GYDCA Global Youth Correspondents, you will gain:",
+benefits: [
+"Join a cross-cultural global youth network, expand international vision and cross-cultural understanding",
+"Build a portfolio of works and personal expression",
+"Travel to Paris with priority opportunities to participate in the UNESCO Youth Summit and related events",
+"Hands-on experience in media and international engagement",
+"Have the opportunity to participate in GYDCA projects and internships, with official certificates and recommendation letters for outstanding participants"
+],
+
+applyText: "Applications are now open",
+applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSfYx8v9KArBlgy4ny21Xt9LESt1YcjoFHffSTRzMk5WRqm6uQ/viewform",
+applyLabel: "Apply now (Deadline: February 9, 2026)",
+follow: "Follow us on Instagram @gydca.youth and join our WhatsApp Global Youth Community"
+}
+}
+
+function setLang(lang) {
+document.getElementById("page-title").innerText = translations[lang].title;
+for (const key in translations[lang]) {
+if (document.getElementById(key)) {
+document.getElementById(key).innerHTML = translations[lang][key];
+}
+}
+const list = document.getElementById("benefits");
+list.innerHTML = "";
+translations[lang].benefits.forEach(i => {
+const li = document.createElement("li");
+li.innerText = i;
+list.appendChild(li);
+});
+document.getElementById("applyLink").href = translations[lang].applyLink;
+document.getElementById("applyLink").innerText = translations[lang].applyLabel;
+}
+
+setLang("en");
+</script>
+
+</body>
+</html>
